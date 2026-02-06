@@ -1,0 +1,42 @@
+% Common mathematical notation
+% Using providecommand to avoid conflicts with paper-specific macros
+\usepackage{amsfonts}
+
+% Number sets
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\N}{\mathbb{N}}
+\providecommand{\Z}{\mathbb{Z}}
+\providecommand{\Q}{\mathbb{Q}}
+\providecommand{\C}{\mathbb{C}}
+
+% Common operators
+\providecommand{\eps}{\varepsilon}
+\providecommand{\vphi}{\varphi}
+
+% Norms and absolute values
+\providecommand{\norm}[1]{\left\|#1\right\|}
+\providecommand{\abs}[1]{\left|#1\right|}
+
+% Inner product
+\providecommand{\inner}[2]{\langle #1, #2 \rangle}
+
+% Probability
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\Var}{\mathrm{Var}}
+\providecommand{\Cov}{\mathrm{Cov}}
+\providecommand{\Prob}{\mathbb{P}}
+
+% Optimization
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% Sets
+\providecommand{\set}[1]{\left\{#1\right\}}
+\providecommand{\setbuild}[2]{\left\{#1 \,:\, #2\right\}}
+
+% Derivatives
+\providecommand{\dd}{\mathrm{d}}
+\providecommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+
+% Big-O notation
+\providecommand{\BigO}[1]{O\left(#1\right)}

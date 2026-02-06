@@ -1,0 +1,21 @@
+\section{Introduction}
+
+The ability of neural networks to learn and approximate mathematical functions has become an increasingly important area of research in both machine learning and computational mathematics \cite{testolin2023neural}. While significant progress has been made in applying neural networks to various mathematical tasks, fundamental questions remain about their capacity to perform precise arithmetic operations and their theoretical guarantees for numerical stability.
+
+Recent advances in spectral graph neural networks (SGNNs) have shown promising results in processing structured mathematical data \cite{mo2024autosgnn}, but their application to fundamental arithmetic operations has not been thoroughly explored. This gap is particularly notable given the growing importance of automated mathematical discovery \cite{pantsar2024theorem} and the need for provably stable numerical computations in scientific applications.
+
+Our work addresses this fundamental challenge by establishing theoretical bounds on the approximation capabilities of graph neural networks for arithmetic functions. Specifically, we consider the class of functions $f: \mathbb{R}^n \to \mathbb{R}$ composed of elementary operations $(+,-,\times,\div)$ and develop a novel framework for constructing SGNN architectures that can approximate these functions with provable error bounds and stability guarantees.
+
+The main contributions of this paper are:
+
+1. A constructive proof showing that for any arithmetic function $f$, there exists a graph neural network architecture $\mathcal{G}$ with spectral filters that can approximate $f$ within arbitrary precision $\epsilon$
+
+2. Explicit bounds on the computational complexity $O(K\log(1/\epsilon))$ where $K$ is the number of spectral filters
+
+3. Guaranteed numerical stability through condition number bounds $\kappa(\mathcal{G}) \leq C\log(1/\epsilon)$
+
+4. A practical algorithm for constructing the required spectral filters $\{g_k\}_{k=1}^K$ given any target arithmetic function
+
+Our results build upon recent work in neural arithmetic \cite{testolin2023neural} and automated mathematical discovery \cite{pantsar2024theorem}, while providing novel theoretical guarantees that have important implications for numerical computing and automated theorem proving. The framework we develop offers a bridge between classical numerical analysis and modern deep learning approaches.
+
+The rest of this paper is organized as follows: Section 2 provides necessary background on spectral graph neural networks and arithmetic function approximation. Section 3 presents our main theoretical results. Section 4 describes the practical construction algorithm. Section 5 provides experimental validation, and Section 6 concludes with discussion of implications and future work.

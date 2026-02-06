@@ -1,0 +1,36 @@
+\section{Limitations and Future Work}
+
+While our theoretical framework provides important guarantees for approximating arithmetic functions using spectral graph neural networks, several key limitations must be acknowledged:
+
+\subsection{Domain Restrictions}
+Our approximation guarantees hold only on compact domains of the form $[-M,M]^n$ for some $M > 0$. The behavior of our constructed networks for inputs outside this bounded domain remains theoretically uncharacterized. Specifically:
+
+\begin{itemize}
+\item The spectral radius bounds established in Lemma 1 may not hold for unbounded domains
+\item The approximation error $\epsilon(x)$ could grow arbitrarily large as $\|x\| \to \infty$
+\item Boundary effects near $x = \pm M$ may lead to degraded performance
+\end{itemize}
+
+\subsection{Numerical Considerations}
+The practical implementation of our framework faces several numerical challenges:
+
+\begin{itemize}
+\item Computing the spectral decomposition of the graph Laplacian $L$ becomes numerically unstable for large graphs
+\item Round-off errors in floating-point arithmetic may accumulate, particularly when evaluating the spectral filters $g_\theta(\lambda_i)$
+\item The condition number of the system grows as $O(M^2)$, potentially leading to numerical instability for large domain bounds
+\end{itemize}
+
+\subsection{Computational Complexity}
+The construction of our approximating networks requires:
+\[
+$O(|V|^3 + |E| \\log |V|)$
+\]
+operations for the spectral decomposition and filter computation. This may become prohibitive for large arithmetic expression graphs.
+
+Future work should address these limitations by:
+\begin{itemize}
+\item Extending the theory to unbounded domains through appropriate scaling techniques
+\item Developing numerically stable algorithms for computing spectral filters
+\item Investigating sparse approximations to reduce computational complexity
+\item Characterizing the trade-off between approximation accuracy and network size
+\end{itemize}

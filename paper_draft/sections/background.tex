@@ -1,0 +1,47 @@
+\section{Background and Related Work}
+
+The mathematical foundations for automated discovery of mathematical models and theorems span several interconnected domains. We review the key theoretical underpinnings and recent advances that inform our work.
+
+\subsection{Neural Network Function Approximation}
+
+The universal approximation theorem establishes that sufficiently wide neural networks can approximate any continuous function on compact subsets of $\mathbb{R}^n$. Recent work by \cite{testolin2023neural} has examined the precise capabilities of neural architectures in performing elementary arithmetic operations, providing rigorous bounds on approximation errors for basic computational tasks. Specifically, for an arithmetic function $f:\mathbb{R}^n \to \mathbb{R}$, they showed that a neural network with width $O(\log(1/\epsilon))$ can achieve approximation error $\leq \epsilon$ on compact domains.
+
+\subsection{Spectral Graph Neural Networks}
+
+The theoretical framework for spectral graph neural networks, as developed in \cite{mo2024autosgnn}, builds on the mathematical foundation of graph Laplacians $L = D - A$, where $D$ is the degree matrix and $A$ is the adjacency matrix. The eigendecomposition $L = U\Lambda U^T$ provides the basis for spectral convolution operations:
+
+\[
+g_\theta \star x = U g_\theta(\Lambda) $U^T$ x
+\]
+
+where $g_\theta$ is a learnable filter function. \cite{hosseini2022deep} demonstrated the effectiveness of such spectral approaches in automated discovery tasks, particularly for structured domains.
+
+\subsection{Constitutive Model Discovery}
+
+A significant advancement in automated mathematical discovery comes from \cite{linka2022automated} and \cite{linka2022family}, who developed frameworks for discovering constitutive relationships in complex systems. Their approach uses specialized neural architectures that incorporate physical constraints through carefully designed loss functions:
+
+\[
+\mathcal{L}(\theta) = \mathcal{L}_\text{data}(\theta) + \lambda \mathcal{L}_\text{physics}(\theta)
+\]
+
+This framework has been extended to various domains, as demonstrated by \cite{wang2022automated} and \cite{shobanadevi2024automated} in their respective applications.
+
+\subsection{Automated Theorem Discovery}
+
+The theoretical foundation for automated theorem discovery, as detailed by \cite{pantsar2024theorem}, relies on encoding logical statements as vectors in high-dimensional spaces. Given a logical formula $\phi$, the encoding function $E:\text{Formula} \to \mathbb{R}^d$ must satisfy:
+
+\[
+\text{Valid}(\phi) \implies \|E(\phi)\| \leq \delta
+\]
+
+for some small $\delta > 0$. Recent work by \cite{ma2022analysis} and \cite{yu2022data} has extended these ideas to pattern discovery in structured domains.
+
+\subsection{Sequential Pattern Mining}
+
+The temporal aspects of mathematical discovery are addressed through sequential pattern mining approaches. \cite{lee2019clustering} and \cite{ding2022prefixpruningbased} developed efficient algorithms for discovering temporal patterns, while \cite{wang2020improved} introduced optimization techniques for high-utility pattern mining. These approaches have been integrated with distributed computing frameworks by \cite{gabidullina2025data} and \cite{pandey2017developing}, enabling scalable pattern discovery.
+
+\subsection{Applications to Complex Systems}
+
+The practical application of these theoretical frameworks has been demonstrated in various domains. \cite{qashou2022mining} applied temporal pattern mining to complex system analysis, while \cite{yu2022data} showed how mathematical model discovery can be automated in biological systems. These applications validate the broader applicability of automated mathematical discovery techniques.
+
+This rich theoretical foundation provides the basis for our work in developing novel approaches to automated mathematical discovery, building particularly on the spectral graph neural network framework of \cite{mo2024autosgnn} and the constitutive model discovery techniques of \cite{linka2022automated}.

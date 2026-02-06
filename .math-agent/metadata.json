@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-02-06T23:47:35.780Z",
+  "generator": "scibook-math-agent",
+  "version": "1.0.0",
+  "topic": "Can graph neural networks with spectral filters provably approximate arbitrary arithmetic functions while maintaining numerical stability?",
+  "title": "Spectral Graph Neural Networks for Universal Approximation of Arithmetic Functions",
+  "tags": [
+    "approximation-theory",
+    "graph-neural-networks",
+    "numerical-analysis",
+    "spectral-methods",
+    "computational-mathematics"
+  ]
+}

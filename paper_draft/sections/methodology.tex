@@ -1,0 +1,61 @@
+\section{Methodology}
+
+Our approach develops a rigorous framework for constructing and analyzing graph neural networks that can approximate arithmetic computations with provable error bounds. We detail both the theoretical proof strategy and empirical validation methodology.
+
+\subsection{Theoretical Framework}
+
+The proof proceeds through several key steps that systematically establish approximation guarantees:
+
+First, we construct a directed acyclic graph $G = (V,E)$ representing the arithmetic computation, where vertices correspond to intermediate values and edges represent elementary operations. For any arithmetic expression $f(x_1,\ldots,x_n)$, we show that:
+
+\[
+\|f - \tilde{f}_K\|_\infty \leq C\sum_{i=1}^d \epsilon_i
+\]
+
+where $\tilde{f}_K$ is our approximation using $K$ Chebyshev coefficients, $d$ is the depth of the computation graph, and $\epsilon_i$ are per-layer errors.
+
+The spectral filters are constructed using truncated Chebyshev expansions:
+
+\[
+h_k(\lambda) = \sum_{j=0}^K \alpha_$j^{(k)}$ T_j(\lambda)
+\]
+
+where $T_j$ are Chebyshev polynomials and $\alpha_j^{(k)}$ are learned coefficients for layer $k$.
+
+For elementary operations, we prove:
+
+\[
+\|g(x) - \tilde{g}_K(x)\|_\infty \leq C_g\$rho^K$
+\]
+
+where $\rho < 1$ is a contraction factor depending on the spectral properties of the graph Laplacian.
+
+\subsection{Implementation and Validation}
+
+The empirical validation follows a systematic protocol:
+
+1. We implement the construction for basic arithmetic expressions using PyTorch Geometric, with graph construction following Algorithm 1:
+
+\begin{algorithm}
+Input: Arithmetic expression $f$
+Output: Graph $G$, filter coefficients $\{\alpha_j^{(k)}\}$
+1. Parse expression into computation graph
+2. Initialize Chebyshev coefficients
+3. Optimize coefficients via gradient descent
+\end{algorithm}
+
+2. Error bounds are validated on random inputs $x_i \sim U[-10,10]$ using:
+
+\[
+E_{\text{emp}} = \max_{x \in \mathcal{X}} |f(x) - \tilde{f}_K(x)|
+\]
+
+3. We analyze numerical stability through condition number estimates:
+
+\[
+\kappa_{\text{emp}} = \left\|\frac{\partial \tilde{f}_K}{\partial \alpha}\right\|_2 \cdot \left\|\frac{\partial \tilde{f}_K}{\partial x}\right\|_2
+\]
+
+4. Computational complexity is benchmarked against the theoretical $O(K\log(1/\epsilon))$ bound using varying problem sizes and precision requirements.
+
+All numerical experiments are performed using 64-bit floating point arithmetic to minimize roundoff effects. Statistical significance is assessed using bootstrap resampling with 1000 replicates.

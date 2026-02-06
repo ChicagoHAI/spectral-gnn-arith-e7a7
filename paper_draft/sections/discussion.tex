@@ -1,0 +1,21 @@
+\section{Discussion}
+
+Our theoretical and experimental results establish a fundamental connection between arithmetic operations and spectral graph neural networks, with several important implications for both mathematical approximation theory and practical machine learning applications.
+
+The main theoretical contribution shows that arithmetic functions can be approximated with controlled error and stability using spectral graph neural networks. This extends classical universal approximation results in several key ways. First, unlike traditional neural networks where stability guarantees are often lacking, our bound $\kappa(\mathcal{G}) \leq C\log(1/\epsilon)$ provides explicit control over numerical conditioning. This is particularly significant given that arithmetic operations like multiplication can be numerically unstable under naive implementations.
+
+The experimental results validate the theoretical predictions and provide additional insights. The observed exponential decrease in error with respect to the number of filters $K$ suggests that our bound $O(K\log(1/\epsilon))$ may not be tight - there could be room for improvement in the theoretical analysis. This aligns with \cite{testolin2023neural}'s findings about the fundamental numerical capabilities of neural architectures.
+
+An interesting phenomenon revealed in our experiments is the differential approximation difficulty between operations. Addition consistently showed better approximation properties than multiplication, which can be understood through the lens of spectral theory - addition preserves more of the graph's spectral structure than multiplication. This hierarchical difficulty mirrors results in \cite{pantsar2024theorem} regarding the relative complexity of different arithmetic operations in neural theorem proving.
+
+The stability results are particularly noteworthy when compared to existing approaches. While \cite{mo2024autosgnn} demonstrated good empirical stability for spectral GNNs in general graph learning tasks, our work provides the first rigorous bounds specifically for arithmetic operations. The observed condition numbers growing more slowly than the theoretical bound suggests that our analysis may be conservative.
+
+Some limitations should be noted. Our framework currently handles only real-valued arithmetic on bounded domains. Extension to complex arithmetic or unbounded domains remains an open question. Additionally, while we prove existence of appropriate filter functions, constructing optimal filters for specific arithmetic operations remains challenging.
+
+Future work could explore several directions:
+1. Tighter bounds on the number of required filters $K$
+2. Explicit construction methods for optimal spectral filters
+3. Extension to more general mathematical operations beyond arithmetic
+4. Investigation of the connection between spectral properties and operational complexity
+
+In conclusion, our results establish a rigorous foundation for implementing arithmetic operations in spectral graph neural networks while maintaining numerical stability. This bridges an important gap between theoretical approximation capabilities and practical implementation concerns in mathematical machine learning.

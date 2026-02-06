@@ -1,0 +1,9 @@
+\section{Conclusion}
+
+In this work, we established fundamental theoretical guarantees for approximating arithmetic functions using spectrally-filtered graph neural networks. Our main contribution proves the existence of architectures that can approximate any elementary arithmetic function with controlled error and stability bounds. This bridges an important gap in understanding the capabilities of graph neural networks for mathematical computation.
+
+The key theoretical result shows that for arithmetic functions, we can construct graph neural networks with spectral filters that achieve arbitrary precision while maintaining numerical stability - a property that was not established in previous frameworks. Compared to the empirical studies in \cite{testolin2023neural}, our work provides rigorous theoretical foundations for the arithmetic capabilities of neural networks. While \cite{linka2022automated} explored constitutive neural networks for model discovery, our approach offers stronger guarantees on approximation error and stability.
+
+Several important directions remain for future work. First, extending our results to more general classes of mathematical functions beyond elementary arithmetic operations would be valuable. Second, developing practical algorithms for constructing the optimal spectral filters $\{g_k\}_{k=1}^K$ given a target function $f$ remains an open challenge. Finally, investigating lower bounds on the required network complexity would help establish the tightness of our results.
+
+The theoretical framework presented here opens new possibilities for reliable mathematical computation using graph neural networks, with guaranteed error bounds and stability properties that are essential for practical applications in scientific computing and automated mathematical reasoning.
