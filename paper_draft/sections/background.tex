@@ -11,7 +11,7 @@ The universal approximation theorem establishes that sufficiently wide neural ne
 The theoretical framework for spectral graph neural networks, as developed in \cite{mo2024autosgnn}, builds on the mathematical foundation of graph Laplacians $L = D - A$, where $D$ is the degree matrix and $A$ is the adjacency matrix. The eigendecomposition $L = U\Lambda U^T$ provides the basis for spectral convolution operations:
 
 \[
-g_\theta \star x = U g_\theta(\Lambda) $U^T$ x
+g_\theta \star x = U g_\theta(\Lambda) U^T x
 \]
 
 where $g_\theta$ is a learnable filter function. \cite{hosseini2022deep} demonstrated the effectiveness of such spectral approaches in automated discovery tasks, particularly for structured domains.

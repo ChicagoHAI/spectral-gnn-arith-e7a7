@@ -17,7 +17,7 @@ where $\tilde{f}_K$ is our approximation using $K$ Chebyshev coefficients, $d$ i
 The spectral filters are constructed using truncated Chebyshev expansions:
 
 \[
-h_k(\lambda) = \sum_{j=0}^K \alpha_$j^{(k)}$ T_j(\lambda)
+h_k(\lambda) = \sum_{j=0}^K \alpha_j^{(k)} T_j(\lambda)
 \]
 
 where $T_j$ are Chebyshev polynomials and $\alpha_j^{(k)}$ are learned coefficients for layer $k$.
@@ -25,7 +25,7 @@ where $T_j$ are Chebyshev polynomials and $\alpha_j^{(k)}$ are learned coefficie
 For elementary operations, we prove:
 
 \[
-\|g(x) - \tilde{g}_K(x)\|_\infty \leq C_g\$rho^K$
+\|g(x) - \tilde{g}_K(x)\|_\infty \leq C_g\rho^K
 \]
 
 where $\rho < 1$ is a contraction factor depending on the spectral properties of the graph Laplacian.
